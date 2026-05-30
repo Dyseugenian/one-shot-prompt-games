@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skate Ninja Runner</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <div id="stage" class="stage" aria-label="Skate Ninja Runner">
+      <canvas id="world3d" class="world3d" aria-hidden="true"></canvas>
+      <canvas id="gameCanvas" class="game-canvas" aria-label="Game field"></canvas>
+
+      <div id="hud" class="hud hidden" aria-live="polite">
+        <div class="stat">
+          <span>Score</span>
+          <strong id="scoreText">0</strong>
+        </div>
+        <div class="stat">
+          <span>Distance</span>
+          <strong id="distanceText">0 m</strong>
+        </div>
+        <div class="stat">
+          <span>Speed</span>
+          <strong id="speedText">1.0x</strong>
+        </div>
+        <div class="stat stat-wide">
+          <span>Shuriken</span>
+          <div class="cooldown" aria-hidden="true"><i id="cooldownFill"></i></div>
+          <strong id="cooldownText">Ready</strong>
+        </div>
+      </div>
+
+      <button id="muteBtn" class="mute-btn" type="button">Sound On</button>
+      <div id="hint" class="hint hidden">Space / W / Up: Ollie&nbsp;&nbsp; Mouse: Aim&nbsp;&nbsp; Click: Shuriken&nbsp;&nbsp; P / Esc: Pause</div>
+      <div id="countdown" class="countdown hidden">3</div>
+      <div id="flash" class="flash" aria-hidden="true"></div>
+
+      <section id="mainMenu" class="screen active">
+        <div class="menu-panel">
+          <p class="eyebrow">Arcade 2.5D Runner</p>
+          <h1>Skate Ninja Runner</h1>
+          <p class="tagline">Ollie gaps, dodge the trail, and cut down flying targets before the path outruns you.</p>
+          <div class="menu-actions">
+            <button id="playBtn" class="primary" type="button">Play</button>
+            <button id="recordsBtn" type="button">Records</button>
+            <button id="quitBtn" type="button">Quit</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="recordsScreen" class="screen">
+        <div class="menu-panel records-panel">
+          <p class="eyebrow">Last 10 Runs</p>
+          <h2>Records</h2>
+          <ol id="recordsList" class="records-list"></ol>
+          <p id="emptyRecords" class="empty-records">No records yet</p>
+          <div class="menu-actions">
+            <button id="backRecordsBtn" type="button">Back</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="pauseScreen" class="screen">
+        <div class="menu-panel compact-panel">
+          <p class="eyebrow">Run Paused</p>
+          <h2>Paused</h2>
+          <div class="menu-actions">
+            <button id="resumeBtn" class="primary" type="button">Resume</button>
+            <button id="pauseMenuBtn" type="button">Main Menu</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="gameOverScreen" class="screen">
+        <div class="menu-panel compact-panel">
+          <p class="eyebrow">Run Complete</p>
+          <h2>Game Over</h2>
+          <div class="final-score">
+            <span>Final Score</span>
+            <strong id="finalScoreText">0</strong>
+          </div>
+          <p id="finalStatsText" class="final-stats">Distance 0 m</p>
+          <div class="menu-actions">
+            <button id="restartBtn" class="primary" type="button">Restart</button>
+            <button id="gameOverMenuBtn" type="button">Main Menu</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="quitScreen" class="screen">
+        <div class="menu-panel compact-panel">
+          <p class="eyebrow">Session Closed</p>
+          <h2>Thanks for playing!</h2>
+          <p class="tagline">Browsers keep tabs open, so this screen stands in for a clean quit.</p>
+          <div class="menu-actions">
+            <button id="quitBackBtn" class="primary" type="button">Main Menu</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
