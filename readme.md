@@ -1,1 +1,1 @@
-Games made by one-shot prompt, using different agents
+Games made by one-shot prompt, using different agents. No more edits afterwards.
