@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dyseugenian.github.io/one-shot-prompt-games/sitemap.xml
