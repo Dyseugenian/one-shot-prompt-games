@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echo Vault: Signal Rider</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="gameFrame" aria-label="Echo Vault game">
+    <canvas id="gameCanvas" width="1280" height="720"></canvas>
+
+    <section id="hud" class="hud hidden" aria-label="Run status">
+      <div class="hud-row top">
+        <div class="brand-pill">ECHO VAULT</div>
+        <div class="meter-block">
+          <span>Phase</span>
+          <div class="meter"><i id="chargeFill"></i></div>
+        </div>
+        <div class="integrity" id="integrityPips" aria-label="Integrity"></div>
+      </div>
+      <div class="hud-row bottom">
+        <div><span>Score</span><strong id="scoreText">0</strong></div>
+        <div><span>Combo</span><strong id="comboText">x1</strong></div>
+        <div><span>Shards</span><strong id="shardsText">0</strong></div>
+        <div><span>Speed</span><strong id="speedText">0</strong></div>
+        <div><span>Threat</span><strong id="threatText">1.0x</strong></div>
+      </div>
+      <div id="statusBanner" class="status-banner"></div>
+    </section>
+
+    <section id="menuScreen" class="screen menu-screen">
+      <div class="menu-copy">
+        <p class="eyebrow">2.5D arcade run</p>
+        <h1>ECHO VAULT</h1>
+        <p class="subtitle">Ride a phase-board through a collapsing memory archive. Switch rails, leap rifts, break sentinels, and keep the signal alive.</p>
+      </div>
+      <div class="menu-panel">
+        <button id="startBtn" class="primary-btn">Start Run</button>
+        <button id="muteBtn" class="ghost-btn">Sound On</button>
+        <div class="controls-grid">
+          <div><b>A / D</b><span>Switch rails</span></div>
+          <div><b>W / Space</b><span>Jump rifts</span></div>
+          <div><b>Shift / J</b><span>Phase dash</span></div>
+          <div><b>P / Esc</b><span>Pause</span></div>
+        </div>
+        <p class="menu-note">Dash spends phase charge. Collect signal shards to refill it and build combo.</p>
+      </div>
+    </section>
+
+    <section id="pauseScreen" class="screen modal-screen hidden">
+      <div class="dialog">
+        <p class="eyebrow">Run suspended</p>
+        <h2>PAUSED</h2>
+        <button id="resumeBtn" class="primary-btn">Resume</button>
+        <button id="restartPauseBtn" class="ghost-btn">Restart Run</button>
+        <button id="menuPauseBtn" class="ghost-btn">Main Menu</button>
+      </div>
+    </section>
+
+    <section id="gameOverScreen" class="screen modal-screen hidden">
+      <div class="dialog wide">
+        <p class="eyebrow">Signal lost</p>
+        <h2>RUN COMPLETE</h2>
+        <div class="results">
+          <div><span>Score</span><strong id="finalScore">0</strong></div>
+          <div><span>Best</span><strong id="bestScore">0</strong></div>
+          <div><span>Distance</span><strong id="finalDistance">0m</strong></div>
+          <div><span>Max Combo</span><strong id="finalCombo">x1</strong></div>
+        </div>
+        <button id="restartBtn" class="primary-btn">Run Again</button>
+        <button id="menuBtn" class="ghost-btn">Main Menu</button>
+      </div>
+    </section>
+
+    <div id="toast" class="toast hidden"></div>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
