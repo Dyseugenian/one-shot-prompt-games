@@ -397,6 +397,11 @@
             transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
         }
 
+        .game-card .model {
+            color: #a4a8ff;
+            padding-top: 14px;
+        }
+
         .game-card:hover {
             border-color: rgba(255, 255, 255, 0.16);
             background:
@@ -487,6 +492,12 @@
             margin-bottom: 30px;
         }
 
+        .prompt-size{
+            font-size: 12px !important;
+            padding-top: 12px;
+            color: gray !important;
+        }
+
         .empty {
             display: none;
             color: var(--muted);
@@ -496,6 +507,10 @@
             text-align: center;
             margin-top: 14px;
             background: rgba(255, 255, 255, 0.01);
+        }
+
+        .github-link{
+            text-decoration: none;
         }
 
         footer {
@@ -558,6 +573,8 @@
                     <span>Curated browser game catalog</span>
                 </div>
             </div>
+
+            <a class="github-link" href="https://github.com/Dyseugenian/one-shot-prompt-games" target="_blank" rel="noopener noreferrer">github</a>
         </header>
 
         <div id="gamesGrid" class="grid">
@@ -575,6 +592,8 @@
                         A fast 2.5D endless runner about a ninja skater, shurikens,
                         obstacles, survival pressure, and steadily increasing difficulty.
                     </p>
+                    <p class="model">Codex GPT-5.5 (Extra High)</p>
+                    <p class="prompt-size">Detailed long prompt</p>
                 </div>
 
                 <div class="game-actions">
